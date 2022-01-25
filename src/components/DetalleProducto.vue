@@ -1,11 +1,11 @@
 <template>
   <v-row justify="space-around">
-    <v-col cols="auto" >
+    <v-col cols="auto">
       <v-dialog transition="dialog-top-transition" width="800">
         <template v-slot:activator="{ on, attrs }">
-          <v-btn color="info" v-bind="attrs" v-on="on"
-            ><v-icon>mdi-eye</v-icon>Detalle</v-btn
-          >
+          <v-btn color="info" v-bind="attrs" v-on="on">
+            <v-icon>mdi-eye</v-icon>Detalle
+          </v-btn>
         </template>
         <template v-slot:default="dialog">
           <v-card class="alinear">
@@ -18,8 +18,10 @@
                       v-for="(item, i) in producto.imagenes"
                       :key="i"
                       :src="item"
-                    ></v-carousel-item> </v-carousel
-                ></v-col><!--:src="require('../assets/img/' + item)"-->
+                    ></v-carousel-item>
+                  </v-carousel>
+                </v-col>
+                <!--:src="require('../assets/img/' + item)"-->
                 <v-col sm="6">
                   <v-list-item>
                     <v-list-item-content>
@@ -47,10 +49,27 @@
                       </v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
-                  <v-list-item three-line>
+                  <v-list-item two-line>
                     <v-list-item-content>
-                      <v-list-item-subtitle>
-                       <BotonComprar  :producto="producto" />
+                      <v-list-item-title
+                        >Precio
+                        <strong style="color: #ff0303"
+                          >{{ producto.moneda }}
+                          {{ producto.precio | decimal2 }}</strong
+                        ></v-list-item-title
+                      >
+                      <v-list-item-subtitle style="color: green"
+                        >antes {{ producto.moneda }}
+                        {{
+                          (producto.precio * 1.15) | decimal2
+                        }}</v-list-item-subtitle
+                      >
+                      <v-list-item-subtitle
+                        style="font-size: 17px; color: #d50b0b"
+                        >Cantidad: {{ producto.stock }}</v-list-item-subtitle
+                      >
+                      <v-list-item-subtitle class="justify-end">
+                        <BotonComprar :producto="producto" />
                       </v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
@@ -71,19 +90,25 @@
 
 <script>
 import BotonComprar from "./BotonComprar.vue";
+const numeral = require("numeral");
 export default {
   props: {
     producto: Object,
   },
-  components: {BotonComprar},
+  components: { BotonComprar },
   data() {
     return {};
+  },
+  filters: {
+    decimal2(value) {
+      return numeral(value).format("0,000.00"); //return value.toFixed(2);
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.alinear{
- text-align: left;
+.alinear {
+  text-align: left;
 }
 </style>

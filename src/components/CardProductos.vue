@@ -1,6 +1,5 @@
 <template>
   <v-card hover class="alinear mx-auto">
-    
     <v-img :src="producto.imagenes[0]" />
     <v-card-title>
       <h5>{{ producto.nombre }}</h5>
@@ -11,11 +10,15 @@
         <v-list-item-content>
           <v-list-item-title
             >Precio:
-            <strong
+            <strong style="color: #ff0303; font-size: 20px"
               >{{ producto.moneda }} {{ producto.precio | decimal2 }}</strong
             ></v-list-item-title
           >
-          <v-list-item-subtitle
+          <v-list-item-subtitle style="color: green"
+            >antes {{ producto.moneda }}
+            {{ (producto.precio * 1.15) | decimal2 }}</v-list-item-subtitle
+          >
+          <v-list-item-subtitle style="font-size: 17px; color: #d50b0b"
             >Cantidad: {{ producto.stock }}</v-list-item-subtitle
           >
         </v-list-item-content>
@@ -33,6 +36,7 @@
 <script>
 import DetalleProduco from "./DetalleProducto.vue";
 import BotonComprar from "./BotonComprar.vue";
+const numeral = require("numeral");
 export default {
   components: {
     DetalleProduco,
@@ -54,7 +58,7 @@ export default {
   },
   filters: {
     decimal2(value) {
-      return value.toFixed(2);
+      return numeral(value).format("0,000.00"); //return value.toFixed(2);
     },
   },
 };
