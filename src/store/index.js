@@ -25,7 +25,7 @@ export default new Vuex.Store({
      
     },
     ELIMINAR_PRODUCTOS_CARRITO(state){
-      state.listaProductos = [];
+      state.carritoProductos = [];//
     },
     DETALLE_PEDIDO(state,paylod){
       state.detallePedido = [];
