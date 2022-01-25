@@ -21,7 +21,7 @@ export default {
     Footer,
   },
   data: () => ({
-    nombreTienda: "Tienda Exon Espinoza",
+    nombreTienda: "Tienda-online Exon Espinoza",
    
   }),
   mounted() {},
