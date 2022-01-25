@@ -1,5 +1,5 @@
 <template>
-  <v-footer padless  color="bar-fondo">
+  <v-footer padless dark  color="bar-fondo">
     <v-col
       class="text-center"
       cols="12"
