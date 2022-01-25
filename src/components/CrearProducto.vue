@@ -90,9 +90,12 @@ export default {
       imagenes: [],
     },
     imagenes: [
-      "https://images.pexels.com/photos/5489402/pexels-photo-5489402.jpeg?h=650&w=940",
+      "https://images.pexels.com/photos/3864681/pexels-photo-3864681.jpeg?h=650&w=940",
+      "https://images.pexels.com/photos/3738755/pexels-photo-3738755.jpeg?h=650&w=940",
+      "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?h=650&w=940"
+      /*"https://images.pexels.com/photos/5489402/pexels-photo-5489402.jpeg?h=650&w=940",
       "https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg?h=650&w=940",
-      "https://images.pexels.com/photos/5727002/pexels-photo-5727002.jpeg?h=650&w=940",
+      "https://images.pexels.com/photos/5727002/pexels-photo-5727002.jpeg?h=650&w=940",*/
     ],
     mensaje: "",
     mensajeRegistro: "",
