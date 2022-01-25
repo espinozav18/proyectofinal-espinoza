@@ -19,10 +19,10 @@ export default {
     return {
       items: [
         {
-          src: require("../assets/img/carrusel/teclado01.jpg"),
+          src: require("../assets/img/carrusel/Carrusel_01.jpg"),
         },
         {
-          src: require("../assets/img/carrusel/teclado01.jpg"),
+          src: require("../assets/img/carrusel/Carrusel_02.jpg"),
         },
       ],
     };
