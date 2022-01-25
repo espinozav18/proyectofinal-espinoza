@@ -119,7 +119,7 @@
 <script>
 //import usuarios from "../assets/json/usuario.json";
 import registroUsuario from "./RegistroUsuario.vue";
-
+import { mapState } from "vuex";
 const axios = require("axios");
 export default {
   components: {
@@ -129,7 +129,7 @@ export default {
     mensajes:{type:Boolean}
   },*/
   data: () => ({
-    usuario: {},
+    //usuario: {},
     //usuario: usuarios,
     items: [{ title: "Cerrar Sesión" }],
     login: true,
@@ -154,7 +154,13 @@ export default {
       (v) => /.+@.+\..+/.test(v) || "E-mail no es valido",
     ],
   }),
+computed: {
+    ...mapState({
+      usuario: (state) => state.usuario,
+     
+    }),
 
+  },
   methods: {
     cerrarDialogs(param) {
       this.registroUsuario = param.registroUsuario;
@@ -176,7 +182,8 @@ export default {
           this.admin = true;
           this.dialog = false;
           this.login = false;
-          this.usuario = validUsuario;
+          this.$store.dispatch("loginUsuario",validUsuario);
+         // this.usuario = validUsuario;
           this.mensajeRegistro = "";
         } else {
           await axios
@@ -192,10 +199,12 @@ export default {
                 if (validUsuario != "" && validUsuario !== undefined) {
                   this.dialog = false;
                   this.login = false;
-                  this.usuario = validUsuario;
+                  //this.usuario = validUsuario;
+                  this.$store.dispatch("loginUsuario",validUsuario);
                   this.mensajeRegistro = "";
                 } else {
                   this.mensaje = "Usuario no encontrado";
+                  this.$store.dispatch("loginUsuario",validUsuario);
                 }
               }
             })

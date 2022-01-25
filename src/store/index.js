@@ -30,6 +30,10 @@ export default new Vuex.Store({
     DETALLE_PEDIDO(state,paylod){
       state.detallePedido = [];
       state.detallePedido = paylod;
+    },
+    LOGIN_USUARIO(state,paylod){
+      state.usuario=paylod;
+      console.info(state.usuario);
     }
 
   },
@@ -80,7 +84,13 @@ export default new Vuex.Store({
     },
     detallePedido(context,paylod){
       context.commit("DETALLE_PEDIDO",paylod);
-    }
+    },
+    //login
+    loginUsuario(context,paylod){
+      context.commit("LOGIN_USUARIO",paylod);
+      
+    },
+    //login
 
   },
   modules: {
