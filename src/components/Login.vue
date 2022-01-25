@@ -94,6 +94,11 @@
           </v-alert>
           <v-alert v-if="mensajeRegistro !== ''" dense outlined type="success">
             {{ mensajeRegistro }}
+          </v-alert> 
+          <v-alert dense outlined type="info">
+            Usuario de prueba de Administracion<br> 
+            <span>Usuario admin: <b>admin@gmail.com</b></span><br>
+           <span>Pass: <b>Admin2021</b></span>
           </v-alert>
         </v-form>
       </v-card-text>
