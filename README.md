@@ -22,3 +22,14 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### DEMO ONLINE
+
+Demo ONLINE: https://proyectofinal-espinoza-evxfo.ondigitalocean.app/
+USUARIO ADMINISTRADOR: 
+USUARIO: admin@gmail.com 
+PASSWORD: Admin2021
+==============================
+USUARIO COMPRADOR
+usuario: coderhouse@gmail.com,
+password: Coders2021
